@@ -1,10 +1,7 @@
 package com.e_com.e_com_project.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +22,10 @@ public class Product {
     private String category;
     private int quantity;
     private boolean available;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private String releaseDate;
+
+    private String imageType;
+    private String imageName;
+    @Lob
+    private byte[] imageData;
 }
